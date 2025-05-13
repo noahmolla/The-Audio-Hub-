@@ -1,0 +1,17 @@
+fastapi[all]
+uvicorn
+sqlalchemy
+pydantic
+python-dotenv
+passlib[bcrypt]
+pyjwt
+sendgrid
+bcrypt
+bandit>=1.8.3
+ruff>=0.9.7
+pre-commit>=4.1.0
+pytest>=8.3.5
+httpx>=0.28.1
+hatch>=1.14.1
+asyncpg>=0.30.0
+pytest-asyncio>=0.26.0

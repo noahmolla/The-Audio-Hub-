@@ -1,0 +1,16 @@
+https://www.postgresql.org/ftp/pgadmin/pgadmin4/v9.3/windows/
+
+go to the website above, then select pgadmin4-9..etc to downlaod that. 
+
+Then:
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads 
+
+download 17.4 version for your pc
+
+Then, add it to path (ask chat gpt how to add psql to path for your computer)
+
+Then, right click on servers, click register, name it backend, and make sure connect now is checked, then click connection, make host name localhost and make sure port is 5432 (default), Finally click save. 
+
+Now, expand backend. right click on Login/Group Roles. clikc create. Name it Audio. Go to definition, for password use Audio@2025. Go to privelegs, go to Can Login and check it. 
+
+Then, right click on databases, click create, name it mydb, Go to security, add Audio to security with CTc or ALL selected (to access the database)

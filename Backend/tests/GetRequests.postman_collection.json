@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "8a1dd5f0-2d5f-40bd-bd0e-be5975b49608",
+		"name": "GetRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43925242",
+		"_collection_link": "https://seanhashem-2050413.postman.co/workspace/Sean-Hashem's-Workspace~a2886423-c82a-4bdc-8284-d2057fe47a7d/collection/43925242-8a1dd5f0-2d5f-40bd-bd0e-be5975b49608?action=share&source=collection_link&creator=43925242"
+	},
+	"item": [
+		{
+			"name": "Get All Audios by UserID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/auth/audio/get_audios/{{userid}}",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"auth",
+						"audio",
+						"get_audios",
+						"{{userid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by Username",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/auth/audio/temp_view/{{userid}}",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"auth",
+						"audio",
+						"temp_view",
+						"{{userid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User by UserID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/auth/user/{{userid}}",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"auth",
+						"user",
+						"{{userid}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status test\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "userid",
+			"value": "3",
+			"type": "string"
+		}
+	]
+}

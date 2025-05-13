@@ -1,0 +1,95 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "app"
+dynamic = ["version"]
+description = "Backend for The Audio Hub project"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+keywords = ["fastapi", "nba", "sports", "tracker"]
+authors = [
+  { name = "Logan Hall", email = "logan-hall@sdsu.edu" },
+  { name = "Noah Molla", email = "noahmolla7888@sdsu.edu" },
+  { name = "Christian Kassab", email = "christianlkassab@sdsu.edu" },
+  { name = "Laith", email = "loraha4821@sdsu.edu" },
+  { name = "Sean Hashem", email = "seanhashem@sdsu.edu" },
+  { name = "Satya Nampalli", email = "satyanampalli@sdsu.edu" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "fastapi[all]",
+  "uvicorn",
+  "sqlalchemy",
+  "pydantic",
+  "python-dotenv",
+  "passlib[bcrypt]",
+  "pyjwt",
+  "sendgrid",
+  "bcrypt",
+  "bandit>=1.8.3",
+  "ruff>=0.9.7",
+  "pre-commit>=4.1.0",
+  "pytest>=8.3.5",
+  "httpx>=0.28.1",
+  "hatch>=1.14.1",
+  "asyncpg>=0.30.0",
+  "pytest-asyncio>=0.26.0",
+  "requests>=2.32.3",
+]
+
+[project.urls]
+Documentation = "https://github.com/UgurEmreDogan/nba-sports-tracker#readme"
+Issues = "https://github.com/UgurEmreDogan/nba-sports-tracker/issues"
+Source = "https://github.com/UgurEmreDogan/nba-sports-tracker"
+
+[tool.hatch.version]
+path = "src/app/__about__.py"
+
+[tool.hatch.envs.default]
+python = "3.12"
+installer = "uv"
+path = ".venv"
+type = "virtual"
+
+[tool.hatch.envs.default.scripts]
+dev = "uvicorn src.app.main:app --reload"
+
+[tool.hatch.envs.types]
+installer = "uv"
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/app tests}"
+
+[tool.coverage.run]
+source_pkgs = ["app", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/app/__about__.py",
+]
+
+[tool.coverage.paths]
+app = ["src/app", "*/app/src/app"]
+tests = ["tests", "*/app/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

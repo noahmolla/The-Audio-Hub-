@@ -1,0 +1,12 @@
+[project]
+dependencies = [
+  "fastapi[all]",
+  "uvicorn",
+  "sqlalchemy",
+  "pydantic",
+  "python-dotenv",
+  "passlib[bcrypt]",
+  "pyjwt",
+  "sendgrid",
+  "bcrypt"
+]

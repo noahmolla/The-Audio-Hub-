@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "56d378c2-a1e1-41f8-894d-25b03acd20fe",
+		"name": "PostRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43925242",
+		"_collection_link": "https://seanhashem-2050413.postman.co/workspace/Sean-Hashem's-Workspace~a2886423-c82a-4bdc-8284-d2057fe47a7d/collection/43925242-56d378c2-a1e1-41f8-894d-25b03acd20fe?action=share&source=collection_link&creator=43925242"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_name\": \"Postman TestUser\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/auth/make_user",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"auth",
+						"make_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_name\": \"Postman TestUser\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/auth/make_user",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"auth",
+						"make_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Create Audio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_name\": \"Postman TestUser\",\r\n  \"email\": \"testuser@example.com\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/auth/make_user",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"auth",
+						"make_user"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Status test\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "userid",
+			"value": "6",
+			"type": "default"
+		}
+	]
+}
